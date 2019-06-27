@@ -38,26 +38,27 @@ class DiscoveryFragment : BaseFragment(), DiscoveryContract.DiscoveryView {
             initData()
         }
 
-        recyclerview.addOnScrollListener(object : RecyclerView.OnScrollListener() {
-            override fun onScrollStateChanged(recyclerView: RecyclerView?, newState: Int) {
-                super.onScrollStateChanged(recyclerView, newState)
-                //0 表示停止滑动的状态 SCROLL_STATE_IDLE
-                //1表示正在滚动，用户手指在屏幕上 SCROLL_STATE_TOUCH_SCROLL
-                //2表示正在滑动。用户手指已经离开屏幕 SCROLL_STATE_FLING
-                when (newState) {
-                    2 -> {
-                        Glide.with(activity.applicationContext).pauseRequests()
-                    }
-                    0 -> {
-                        Glide.with(activity.applicationContext).resumeRequests()
-                    }
-                    1 -> {
-                        Glide.with(activity.applicationContext).resumeRequests()
-                    }
-                }
+        recyclerview.addOnScrollListener(
+                object : RecyclerView.OnScrollListener() {
+                    override fun onScrollStateChanged(recyclerView: RecyclerView?, newState: Int) {
+                        super.onScrollStateChanged(recyclerView, newState)
+                        //0 表示停止滑动的状态 SCROLL_STATE_IDLE
+                        //1表示正在滚动，用户手指在屏幕上 SCROLL_STATE_TOUCH_SCROLL
+                        //2表示正在滑动。用户手指已经离开屏幕 SCROLL_STATE_FLING
+                        when (newState) {
+                            2 -> {
+                                Glide.with(activity.applicationContext).pauseRequests()
+                            }
+                            0 -> {
+                                Glide.with(activity.applicationContext).resumeRequests()
+                            }
+                            1 -> {
+                                Glide.with(activity.applicationContext).resumeRequests()
+                            }
+                        }
 
-            }
-        })
+                    }
+                })
         val list = ArrayList<Result.ItemList>()
         val layoutManager = LinearLayoutManager(this.activity!!)
         recyclerview.layoutManager = layoutManager

@@ -70,7 +70,7 @@ class HomeFragment : BaseFragment(), ViewPager.OnPageChangeListener, CategoriesC
     }
 
     override fun initPresenter() {
-        CategoriesPresenter(this)
+          CategoriesPresenter(this)
     }
 
     class CategoryListEntity {

@@ -18,4 +18,6 @@ interface DiscoveryContract {
         fun onDiscoverySucc(result: Result)
         fun onDiscoveryFail(error: Throwable?)
     }
+
+
 }
