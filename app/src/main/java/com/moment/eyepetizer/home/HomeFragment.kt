@@ -11,6 +11,7 @@ import kotlinx.android.synthetic.main.home_fragment.*
 import android.support.v4.app.FragmentStatePagerAdapter
 import android.support.v4.view.PagerAdapter
 import android.support.v4.view.ViewPager
+import android.util.Log
 import com.moment.eyepetizer.TabSwitchActivity
 import com.moment.eyepetizer.event.RxBus
 import com.moment.eyepetizer.event.entity.ChangeTabEvent
@@ -91,6 +92,7 @@ class HomeFragment : BaseFragment(), ViewPager.OnPageChangeListener, CategoriesC
     }
 
     override fun onCategoriesSucc(t: List<Categories>) {
+        Log.d(this.javaClass.simpleName,"onCategoriesSucc")
         var list = t.toMutableList()
 
         var tabs: MutableList<Categories> = ArrayList<Categories>() as MutableList<Categories>

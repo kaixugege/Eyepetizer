@@ -56,7 +56,6 @@ class DiscoveryFragment : BaseFragment(), DiscoveryContract.DiscoveryView {
                                 Glide.with(activity.applicationContext).resumeRequests()
                             }
                         }
-
                     }
                 })
         val list = ArrayList<Result.ItemList>()
